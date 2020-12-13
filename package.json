@@ -1,0 +1,45 @@
+{
+    "name": "tetris",
+    "version": "1.0.0",
+    "description": "by 위현욱",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "dist": "electron-builder build",
+        "postinstall": "install-app-deps"
+    },
+    "author": "WW",
+    "license": "MIT",
+    "devDependencies": {
+        "asar": "^2.0.3",
+        "electron": "^7.3.3",
+        "electron-builder": "^21.2.0",
+        "electron-packager": "^15.1.0"
+    },
+    "build": {
+        "asar": true,
+        "appId": "tetris",
+        "productName": "tetris",
+        "icon": "tetris.png",
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "oneClick": true,
+            "perMachine": false,
+            "createDesktopShortcut": true
+        }
+    },
+    "dependencies": {
+        "jira-client": "^6.14.0",
+        "sqlite3": "^5.0.0"
+    }
+}
